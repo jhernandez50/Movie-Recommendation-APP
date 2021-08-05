@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=./style.css>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    
+
+
+    <title>Document</title>
+</head>
+<body>
+    <h1 class=title>Movie recommendation</h1>
+    <div class=container>
+    <div class="field">
+        <label class="label">Chose a movie category</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option id=Action>Action</option>
+              <option id=Comedy>Comedy</option>
+              <option id=Drama>Drama</option>
+              <option id=Fantasy>Fantasy</option>
+              <option id=Horror>Horror</option>
+              <option id=Mistery>Mystery</option>
+              <option id=Romance>Romance</option>
+              <option id=Thriller>Thriller</option>
+            </select>
+          </div>
+        </div>
+    </div>
+      <div class="field">
+            <label class="label">Do you prefer a country?</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Country">
+            </div>
+      </div>
+<p class=label> Streaming Service</p>
+
+<div class="field">
+    <div class="control">
+      <label class="checkbox">
+        <input type="checkbox">
+        Netflix
+      </label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <label class="checkbox">
+        <input type="checkbox">
+        Amazon Prime
+      </label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <label class="checkbox">
+        <input type="checkbox">
+        Disney Plus
+      </label>
+    </div>
+  </div>
+
+  <p class=label> Ranking</p>
+  <div class="field">
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="question">
+        Top 5
+      </label>
+      <label class="radio">
+        <input type="radio" name="question">
+        Top 10
+      </label>
+      <label class="radio">
+        <input type="radio" name="question">
+        Top 15
+      </label>
+    </div>
+  </div>
+  
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">Search Movie</button>
+    </div>
+  </div>
+
+    
+      <script src="./script.js"></script>
+</body>
+</html>
