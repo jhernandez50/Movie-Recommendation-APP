@@ -12,82 +12,83 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="userform">
     <h1 class=title>Movie recommendation</h1>
     <div class=container>
     <div class="field">
         <label class="label">Chose a movie category</label>
         <div class="control">
           <div class="select">
-            <select>
-              <option id=Action>Action</option>
-              <option id=Comedy>Comedy</option>
-              <option id=Drama>Drama</option>
-              <option id=Fantasy>Fantasy</option>
-              <option id=Horror>Horror</option>
-              <option id=Mistery>Mystery</option>
-              <option id=Romance>Romance</option>
-              <option id=Thriller>Thriller</option>
+            <select id=list>
+              <option value=Action>Action</option>
+              <option value=Comedy>Comedy</option>
+              <option value=Drama>Drama</option>
+              <option value=Fantasy>Fantasy</option>
+              <option value=Horror>Horror</option>
+              <option value=Mistery>Mystery</option>
+              <option value=Romance>Romance</option>
+              <option value=Thriller>Thriller</option>
             </select>
           </div>
         </div>
     </div>
-      <div class="field">
-            <label class="label">Do you prefer a country?</label>
+
+    <div class=container>
+        <div class="field">
+            <label class="label">Chose a movie category</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Country">
+              <div class="select">
+                <select id=contrylist>
+                  <option value=US>United States</option>
+                  <option value=MX>Mexico</option>
+                  <option value=ES>Spain</option>
+                  <option value=KR>South Corea</option>
+                  <option value=JP>Japan</option>
+                  <option value=GB>United Kingdom</option>
+                  <option value=DE>Germany</option>
+                  <option value=IT>Italy</option>
+                  <option value=FR>France</option>
+                </select>
+              </div>
             </div>
-      </div>
-<p class=label> Streaming Service</p>
+        </div>
 
-<div class="field">
-    <div class="control">
-      <label class="checkbox">
-        <input type="checkbox">
-        Netflix
-      </label>
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-      <label class="checkbox">
-        <input type="checkbox">
-        Amazon Prime
-      </label>
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-      <label class="checkbox">
-        <input type="checkbox">
-        Disney Plus
-      </label>
-    </div>
-  </div>
+        <div class=container>
+            <div class="field">
+                <label class="label">Streaming Service</label>
+                <div class="control">
+                  <div class="select">
+                    <select id=streaminglist>
+                      <option value=Netflix>Netflix</option>
+                      <option value="Amazon Prime Video">Amazon Prime Video</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
 
-  <p class=label> Ranking</p>
-  <div class="field">
-    <div class="control">
-      <label class="radio">
-        <input type="radio" name="question">
-        Top 5
-      </label>
-      <label class="radio">
-        <input type="radio" name="question">
-        Top 10
-      </label>
-      <label class="radio">
-        <input type="radio" name="question">
-        Top 15
-      </label>
-    </div>
-  </div>
+            <div class=container>
+                <div class="field">
+                    <label class="label">Ranking</label>
+                    <div class="control">
+                      <div class="select">
+                        <select id=ranked>
+                          <option value=5>Top 5</option>
+                          <option value=10>Top 10</option>
+                          <option value=15>Top 15</option>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+
+  
   
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-link">Search Movie</button>
+      <button type="submit" id="button-search" class="button is-link">Search Movie</button>
     </div>
   </div>
-
+  
+</div>
     
       <script src="./script.js"></script>
 </body>
