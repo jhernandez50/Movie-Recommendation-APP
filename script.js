@@ -5,12 +5,18 @@ var userForm = document.getElementsByClassName('userform');
 document.addEventListener('DOMContentLoaded', function(){
 
 
-fetch('https://api.themoviedb.org/3/watch/providers/regions?api_key=b4cfe3333fbf02f20974b17f4729d756&language=en-US')
+    https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=b4cfe3333fbf02f20974b17f4729d756&language=en-US')
 .then(response => response.json())
 .then(data => {
     console.log(data);
 })
-fetch('https://api.themoviedb.org/3/discover/movie?api_key=b4cfe3333fbf02f20974b17f4729d756&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate')
+fetch('https://api.themoviedb.org/3/discover/movie?api_key=b4cfe3333fbf02f20974b17f4729d756&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate')
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+})
+fetch('https://api.themoviedb.org/3/discover/movie?api_key=b4cfe3333fbf02f20974b17f4729d756&language=en-US&sort_by=popularity.desc&include_adult=false&with_genres=28&include_video=false&page=1&with_watch_monetization_types=flatrate')
 .then(response => response.json())
 .then(data => {
     console.log(data);
@@ -38,7 +44,7 @@ fetch("https://imdb8.p.rapidapi.com/title/get-ratings?tconst=tt0944947", {
     console.log(data);
 
 });
-fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=mx&service=netflix&type=movie&genre=18&page=1&language=en", {
+fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=mx&service=prime&type=movie&genre=878&page=1&language=en", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "234318cf3fmsh0f747da303024dep16b409jsn069ea46fddfc",
