@@ -1,4 +1,4 @@
-//Variables
+
 $(function(){
 	getResponce()
 })
@@ -11,31 +11,24 @@ const getResponce=()=>{
 	const category = $("#ddn-category :selected").val();
 	const country = $("#ddn-country :selected").val();
 	const service = $("#ddn-stream :selected").val();
+	
+	fetch(`https://streaming-availability.p.rapidapi.com/search/basic?country=${country}&service=${service}&type=movie&genre=${category}&page=1&language=en`, {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-key": "8a4020d265msh42cabf6254ba581p114934jsne620a89acddd",
+			"x-rapidapi-host": "streaming-availability.p.rapidapi.com"
+		}
+	})
+	.then(response => response.json())
+	.then((data)=>{
+		console.log(data)
+		appendResponse(data.results);
 
-//API's Website fetch information
-const options = {
-	method: 'GET',
-	url: 'https://streaming-availability.p.rapidapi.com/search/basic',
-	params: {
-	  country: country,
-	  service: service,
-	  type: 'movie',
-	  genre: category,
-	  page: '3',
-	  language: 'en'
-	},
-	headers: {
-	  'x-rapidapi-key': 'cd878e4e8emsh294d7a87d6c753bp120aa3jsnf1fe1c974034',
-	  'x-rapidapi-host': 'streaming-availability.p.rapidapi.com'
-	}
-  };
-  
-  axios.request(options).then(function (response) {
-	  console.log(response.data.results);
-	  appendResponse(response.data.results);
-  }).catch(function (error) {
-	  console.error(error);
-  });
+	})
+	.catch(err => {
+		console.error(err);
+	});
+	
 }
 
 const appendResponse=(data)=>{
@@ -56,10 +49,8 @@ const appendResponse=(data)=>{
 }
 
 const sortDataByRanking=(data,ranking)=>{
-	console.log(ranking)
 	let sortedData=[];
 	data.map(movie=>{
-		console.log(ranking)
 		if(movie.imdbRating/10>=ranking){
 			sortedData.push(movie);
 		}
